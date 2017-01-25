@@ -6,6 +6,7 @@
 package ense471lab1;
 
 import java.awt.*;
+import java.awt.Font;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 
@@ -27,7 +28,7 @@ public class ENSE471Lab1 extends javax.swing.JFrame
         this.setTitle("Facebook");
         
         // Define the size of the frame
-        this.setSize(400, 300);
+        this.setSize(500, 500);
 
         // open frame in the middle of the screen 
         Toolkit tk = Toolkit.getDefaultToolkit();
@@ -39,56 +40,69 @@ public class ENSE471Lab1 extends javax.swing.JFrame
         this.setResizable(false);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-         JPanel paneA = new JPanel();
+        
+        JPanel upperPanel = new JPanel();
+        upperPanel.setBackground(Color.BLUE);
+        upperPanel.setLayout(null); 
+        upperPanel.setBounds(5, 5, 400, 50);
+        
         // --- label ---
         JLabel labelA = new JLabel("Facebook");
-        paneA.add(labelA);
+        labelA.setFont(new Font("heading", 0, 20));
+        labelA.setBounds(5, 5, 100, 50);
+        upperPanel.add(labelA);
         
-        this.getContentPane().add(BorderLayout.NORTH, paneA);
-        JFrame box = new JFrame();
+        // --- Button ---
+        JButton button1 = new JButton("Signup");
+        button1.setBackground(Color.GREEN);
+        button1.setBounds(100, 25, 100, 20);
+        upperPanel.add(button1);
         
-        JPanel panel = new JPanel();
+        this.getContentPane().add(upperPanel);
+        
+        JPanel centerPanel = new JPanel();
+        centerPanel.setBackground(Color.WHITE);
+        centerPanel.setLayout(null);     
+        centerPanel.setBounds(5, 55, 400, 350);
+        
         // --- label ---
         JLabel label1 = new JLabel("Email or phone");
-        panel.add(label1);
+        centerPanel.add(label1);
         
         // --- text box ---
         JTextField textField1 = new JTextField();
         textField1.setColumns(25);
-        panel.add(textField1);
+        centerPanel.add(textField1);
 
         // --- label ---
         JLabel label2 = new JLabel("Password");
-        panel.add(label2);
+        centerPanel.add(label2);
         
         // --- text box ---
         JTextField textField2 = new JTextField();
         textField2.setColumns(25);
-        panel.add(textField2);
+        centerPanel.add(textField2);
         
         // --- label ---
         JLabel label3 = new JLabel("Keep me logged in");
         
-        panel.add(label3);
+        centerPanel.add(label3);
         
-       
-       JPanel pane2 = new JPanel(); 
         // --- Button ---
-        JButton button1 = new JButton("Send");
-        button1.setText("Login");
-        panel.add(button1);
+        JButton button2 = new JButton("Login");
+        centerPanel.add(button2);
         
         // --- label ---
         JLabel label4 = new JLabel("or Sign up for FaceBook                      ");
         //label4.setFont();
-        panel.add(label4);
+        centerPanel.add(label4);
         
         // --- label ---
         JLabel label5 = new JLabel("Forgot your password? ");
         //label3.label5();
-        panel.add(label5);
+        centerPanel.add(label5);
         
-        this.getContentPane().add(BorderLayout.CENTER, panel);
+        this.getContentPane().add(centerPanel);
         
 
         // Make the frame show on the screen
