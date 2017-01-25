@@ -26,9 +26,11 @@ public class ENSE471Lab1 extends javax.swing.JFrame
     {
         // Define the title for the frame
         this.setTitle("Facebook");
-        
+
+        int MAX_HEIGHT = 500;
+        int MAX_WIDTH = 500;
         // Define the size of the frame
-        this.setSize(500, 500);
+        this.setSize(MAX_HEIGHT, MAX_WIDTH);
 
         // open frame in the middle of the screen 
         Toolkit tk = Toolkit.getDefaultToolkit();
@@ -36,77 +38,77 @@ public class ENSE471Lab1 extends javax.swing.JFrame
         int xPos = (dim.width / 2) - (this.getWidth() / 2);
         int yPos = (dim.height / 2) - (this.getHeight() / 2);
         this.setLocation(xPos, yPos);
-        
+
         this.setResizable(false);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        
+        // -- Upper Panel --
         JPanel upperPanel = new JPanel();
         upperPanel.setBackground(Color.BLUE);
-        upperPanel.setLayout(null); 
-        upperPanel.setBounds(5, 5, 400, 50);
-        
+        upperPanel.setLayout(null);
+        upperPanel.setBounds(0, 0, MAX_WIDTH, 50);
+
         // --- label ---
-        JLabel labelA = new JLabel("Facebook");
-        labelA.setFont(new Font("heading", 0, 20));
-        labelA.setBounds(5, 5, 100, 50);
+        JLabel labelA = new JLabel("facebook");
+        labelA.setFont(new Font("heading", 0, 30));
+        labelA.setForeground(Color.white);
+        labelA.setBounds(5, 5, 150, 50);
         upperPanel.add(labelA);
-        
+
         // --- Button ---
         JButton button1 = new JButton("Signup");
         button1.setBackground(Color.GREEN);
-        button1.setBounds(100, 25, 100, 20);
+        button1.setBounds(150, 25, 75, 20);
         upperPanel.add(button1);
-        
-        this.getContentPane().add(upperPanel);
-        
-        JPanel centerPanel = new JPanel();
-        centerPanel.setBackground(Color.WHITE);
-        centerPanel.setLayout(null);     
-        centerPanel.setBounds(5, 55, 400, 350);
-        
+
+        this.add(upperPanel);
+
+        // -- Center Panel --
+        JPanel centerWhitePanel = new JPanel();
+        centerWhitePanel.setBackground(Color.yellow);
+        centerWhitePanel.setLayout(null);
+        centerWhitePanel.setBounds(100, 100, 100, 100);
+
+        this.add(centerWhitePanel);
+
         // --- label ---
         JLabel label1 = new JLabel("Email or phone");
-        centerPanel.add(label1);
-        
+        label1.setBackground(Color.GREEN);
+        label1.setBounds(5, 15, 100, 40);
+        centerWhitePanel.add(label1);
+
         // --- text box ---
         JTextField textField1 = new JTextField();
         textField1.setColumns(25);
-        centerPanel.add(textField1);
+        centerWhitePanel.add(textField1);
 
         // --- label ---
         JLabel label2 = new JLabel("Password");
-        centerPanel.add(label2);
-        
+        centerWhitePanel.add(label2);
+
         // --- text box ---
         JTextField textField2 = new JTextField();
         textField2.setColumns(25);
-        centerPanel.add(textField2);
-        
+        centerWhitePanel.add(textField2);
+
         // --- label ---
         JLabel label3 = new JLabel("Keep me logged in");
-        
-        centerPanel.add(label3);
-        
+
+        centerWhitePanel.add(label3);
+
         // --- Button ---
         JButton button2 = new JButton("Login");
-        centerPanel.add(button2);
-        
+        centerWhitePanel.add(button2);
+
         // --- label ---
         JLabel label4 = new JLabel("or Sign up for FaceBook                      ");
         //label4.setFont();
-        centerPanel.add(label4);
-        
+        centerWhitePanel.add(label4);
+
         // --- label ---
         JLabel label5 = new JLabel("Forgot your password? ");
         //label3.label5();
-        centerPanel.add(label5);
-        
-        this.getContentPane().add(centerPanel);
-        
-
-        // Make the frame show on the screen
-        this.setVisible(true);
+        centerWhitePanel.add(label5);
 
     }
 
@@ -150,7 +152,7 @@ public class ENSE471Lab1 extends javax.swing.JFrame
             }
         });
 
-    }        
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     // End of variables declaration//GEN-END:variables
 }
