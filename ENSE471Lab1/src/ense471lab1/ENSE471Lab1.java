@@ -42,6 +42,12 @@ public class ENSE471Lab1 extends javax.swing.JFrame
         this.setResizable(false);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
+        //-- Entire Panel --
+        JPanel mainPanel = new JPanel();
+        mainPanel.setBackground(Color.LIGHT_GRAY);
+        mainPanel.setLayout(null);
+        mainPanel.setBounds(0, 0, MAX_WIDTH, 50);
+        
         // -- Upper Panel --
         JPanel upperPanel = new JPanel();
         upperPanel.setBackground(Color.BLUE);
@@ -61,15 +67,15 @@ public class ENSE471Lab1 extends javax.swing.JFrame
         button1.setBounds(150, 25, 75, 20);
         upperPanel.add(button1);
 
-        this.add(upperPanel);
+        mainPanel.add(upperPanel);
 
         // -- Center Panel --
         JPanel centerWhitePanel = new JPanel();
         centerWhitePanel.setBackground(Color.yellow);
         centerWhitePanel.setLayout(null);
-        centerWhitePanel.setBounds(100, 100, 100, 100);
+        centerWhitePanel.setBounds(5, 55, MAX_WIDTH, MAX_HEIGHT - 56);
 
-        this.add(centerWhitePanel);
+        mainPanel.add(centerWhitePanel);
 
         // --- label ---
         JLabel label1 = new JLabel("Email or phone");
@@ -110,6 +116,7 @@ public class ENSE471Lab1 extends javax.swing.JFrame
         //label3.label5();
         centerWhitePanel.add(label5);
 
+        this.add(mainPanel);
     }
 
     /**
