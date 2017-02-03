@@ -1,7 +1,6 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+Clayton Brezinski
+200220989
  */
 package ense471lab1;
 
@@ -46,7 +45,7 @@ public class ENSE471Lab1 extends javax.swing.JFrame
         JPanel mainPanel = new JPanel();
         mainPanel.setBackground(Color.LIGHT_GRAY);
         mainPanel.setLayout(null);
-        mainPanel.setBounds(0, 0, MAX_WIDTH, 50);
+        mainPanel.setBounds(0, 0, MAX_WIDTH, MAX_HEIGHT);
         
         // -- Upper Panel --
         JPanel upperPanel = new JPanel();
@@ -54,67 +53,96 @@ public class ENSE471Lab1 extends javax.swing.JFrame
         upperPanel.setLayout(null);
         upperPanel.setBounds(0, 0, MAX_WIDTH, 50);
 
-        // --- label ---
-        JLabel labelA = new JLabel("facebook");
-        labelA.setFont(new Font("heading", 0, 30));
-        labelA.setForeground(Color.white);
-        labelA.setBounds(5, 5, 150, 50);
-        upperPanel.add(labelA);
+        // -- Center Panel --
+        JPanel centerWhitePanel = new JPanel();
+        centerWhitePanel.setBackground(Color.white);
+        centerWhitePanel.setLayout(null);
+        centerWhitePanel.setBounds(50 , upperPanel.getBounds().height + 50  , 375 , 175);
+        centerWhitePanel.setBorder(BorderFactory.createLineBorder(Color.DARK_GRAY));
+
+        // -- line across center panel
+        JPanel lineInCenterPanel = new JPanel();
+        lineInCenterPanel.setBackground(Color.DARK_GRAY);
+        lineInCenterPanel.setLayout(null);
+        lineInCenterPanel.setBounds(centerWhitePanel.getBounds().x - 40 , centerWhitePanel.getBounds().y - 60, centerWhitePanel.getBounds().width - 20 , 1);
+        centerWhitePanel.add(lineInCenterPanel);
+        
+        mainPanel.add(centerWhitePanel);
+        
+        // --- UpperPanel Facebook Label ---
+        JLabel lblFacebook = new JLabel("facebook");
+        lblFacebook.setFont(new Font("heading", 0, 30));
+        lblFacebook.setForeground(Color.white);
+        lblFacebook.setBounds(5, 5, 150, 50);
+        upperPanel.add(lblFacebook);
 
         // --- Button ---
-        JButton button1 = new JButton("Signup");
-        button1.setBackground(Color.GREEN);
-        button1.setBounds(150, 25, 75, 20);
-        upperPanel.add(button1);
+        JButton btnSignup = new JButton("Signup");
+        btnSignup.setBackground(Color.GREEN);
+        btnSignup.setForeground(Color.white);
+        btnSignup.setBounds(150, 25, 75, 20);
+        upperPanel.add(btnSignup);
 
         mainPanel.add(upperPanel);
 
-        // -- Center Panel --
-        JPanel centerWhitePanel = new JPanel();
-        centerWhitePanel.setBackground(Color.yellow);
-        centerWhitePanel.setLayout(null);
-        centerWhitePanel.setBounds(5, 55, MAX_WIDTH, MAX_HEIGHT - 56);
-
-        mainPanel.add(centerWhitePanel);
-
-        // --- label ---
-        JLabel label1 = new JLabel("Email or phone");
-        label1.setBackground(Color.GREEN);
-        label1.setBounds(5, 15, 100, 40);
-        centerWhitePanel.add(label1);
+        // --- lblFacebookLogin ---
+        JLabel lblFacebookLogin = new JLabel("Facebook Login");
+        lblFacebookLogin.setFont(new Font("bold", 0, 20));
+        lblFacebookLogin.setBounds(5, 1, 150, 40);
+        centerWhitePanel.add(lblFacebookLogin);
+        
+        // --- label2 ---
+        JLabel lblEmailOrPhone = new JLabel("Email or phone: ");
+        lblEmailOrPhone.setBackground(Color.GREEN);
+        lblEmailOrPhone.setBounds(20, 45, 100, 12);
+        centerWhitePanel.add(lblEmailOrPhone);
 
         // --- text box ---
-        JTextField textField1 = new JTextField();
-        textField1.setColumns(25);
-        centerWhitePanel.add(textField1);
+        JTextField txtEmailOrPhone = new JTextField();
+        txtEmailOrPhone.setColumns(25);
+        txtEmailOrPhone.setBounds(lblEmailOrPhone.getBounds().x + lblEmailOrPhone.getBounds().width + 5, lblEmailOrPhone.getBounds().y , 200, 20);
+        centerWhitePanel.add(txtEmailOrPhone);
 
-        // --- label ---
-        JLabel label2 = new JLabel("Password");
-        centerWhitePanel.add(label2);
+        // --- label2 ---
+        JLabel lblPassword = new JLabel("Password: ");
+        lblPassword.setBackground(Color.GREEN);
+        lblPassword.setBounds(lblEmailOrPhone.getBounds().x , lblEmailOrPhone.getBounds().y + 20, 100, 12);
+        centerWhitePanel.add(lblPassword);
 
         // --- text box ---
-        JTextField textField2 = new JTextField();
-        textField2.setColumns(25);
-        centerWhitePanel.add(textField2);
+        JTextField txtPassword = new JTextField();
+        txtPassword.setColumns(25);
+        txtPassword.setBounds(lblPassword.getBounds().x + lblPassword.getBounds().width + 5, lblPassword.getBounds().y , 200, 20);
+        centerWhitePanel.add(txtPassword);
 
-        // --- label ---
-        JLabel label3 = new JLabel("Keep me logged in");
-
-        centerWhitePanel.add(label3);
+        JCheckBox keepLoggedIn = new JCheckBox();
+        keepLoggedIn.setBounds(txtEmailOrPhone.getBounds().x, lblPassword.getBounds().y + 20, 20, 20);
+        centerWhitePanel.add(keepLoggedIn);
+        
+        // --- label4 ---
+        JLabel lblKeepMeLoggedIn = new JLabel("Keep me logged in");
+        lblKeepMeLoggedIn.setBounds(keepLoggedIn.getBounds().x + keepLoggedIn.getBounds().width , lblPassword.getBounds().y + 20, 150, 20);
+        centerWhitePanel.add(lblKeepMeLoggedIn);
+        
 
         // --- Button ---
-        JButton button2 = new JButton("Login");
-        centerWhitePanel.add(button2);
+        JButton btnLogin = new JButton("Log In");
+        btnLogin.setBackground(Color.blue);
+        btnLogin.setForeground(Color.white);
+        btnLogin.setBounds(keepLoggedIn.getBounds().x, lblKeepMeLoggedIn.getBounds().y+ 20, 80,  20);
+        centerWhitePanel.add(btnLogin);
 
-        // --- label ---
-        JLabel label4 = new JLabel("or Sign up for FaceBook                      ");
-        //label4.setFont();
-        centerWhitePanel.add(label4);
+        // --- label5 ---
+        JLabel lblSignUpForFacebook = new JLabel("or Sign up for FaceBook");
+        lblSignUpForFacebook.setForeground(Color.blue);
+        lblSignUpForFacebook.setBounds(btnLogin.getBounds().x + btnLogin.getBounds().width + 5, btnLogin.getBounds().y, 200, btnLogin.getBounds().height);
+        centerWhitePanel.add(lblSignUpForFacebook);
 
-        // --- label ---
-        JLabel label5 = new JLabel("Forgot your password? ");
-        //label3.label5();
-        centerWhitePanel.add(label5);
+        // --- label6 ---
+        JLabel lblForgotPassword = new JLabel("Forgot your password? ");
+        lblForgotPassword.setForeground(Color.blue);
+        lblForgotPassword.setBounds(btnLogin.getBounds().x, btnLogin.getBounds().y + 20, 200, 20);
+        centerWhitePanel.add(lblForgotPassword);
 
         this.add(mainPanel);
     }
