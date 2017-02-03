@@ -38,9 +38,11 @@ public class ENSE471Lab1 extends javax.swing.JFrame
         int yPos = (dim.height / 2) - (this.getHeight() / 2);
         this.setLocation(xPos, yPos);
 
+        // disable resizability and set the default close operation for the frame
         this.setResizable(false);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
+        // ----- Panel setup -----
         //-- Entire Panel --
         JPanel mainPanel = new JPanel();
         mainPanel.setBackground(Color.LIGHT_GRAY);
@@ -69,17 +71,18 @@ public class ENSE471Lab1 extends javax.swing.JFrame
         
         mainPanel.add(centerWhitePanel);
         
+        // ----- Label, Button, Textbox setup -----
         // --- UpperPanel Facebook Label ---
         JLabel lblFacebook = new JLabel("facebook");
         lblFacebook.setFont(new Font("heading", 0, 30));
-        lblFacebook.setForeground(Color.white);
+        lblFacebook.setForeground(Color.WHITE);
         lblFacebook.setBounds(5, 5, 150, 50);
         upperPanel.add(lblFacebook);
 
         // --- Button ---
         JButton btnSignup = new JButton("Signup");
         btnSignup.setBackground(Color.GREEN);
-        btnSignup.setForeground(Color.white);
+        btnSignup.setForeground(Color.WHITE);
         btnSignup.setBounds(150, 25, 75, 20);
         upperPanel.add(btnSignup);
 
@@ -127,14 +130,14 @@ public class ENSE471Lab1 extends javax.swing.JFrame
 
         // --- Button ---
         JButton btnLogin = new JButton("Log In");
-        btnLogin.setBackground(Color.blue);
-        btnLogin.setForeground(Color.white);
+        btnLogin.setBackground(Color.BLUE);
+        btnLogin.setForeground(Color.WHITE);
         btnLogin.setBounds(keepLoggedIn.getBounds().x, lblKeepMeLoggedIn.getBounds().y+ 20, 80,  20);
         centerWhitePanel.add(btnLogin);
 
         // --- label5 ---
         JLabel lblSignUpForFacebook = new JLabel("or Sign up for FaceBook");
-        lblSignUpForFacebook.setForeground(Color.blue);
+        lblSignUpForFacebook.setForeground(Color.BLUE);
         lblSignUpForFacebook.setBounds(btnLogin.getBounds().x + btnLogin.getBounds().width + 5, btnLogin.getBounds().y, 200, btnLogin.getBounds().height);
         centerWhitePanel.add(lblSignUpForFacebook);
 
