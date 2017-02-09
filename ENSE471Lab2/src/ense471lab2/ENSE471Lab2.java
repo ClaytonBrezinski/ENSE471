@@ -21,11 +21,32 @@ public class ENSE471Lab2 extends javax.swing.JFrame
     {
         defaultSetup();
         
+        
+        
          //-- Entire Panel --
-        JPanel mainPanel = new JPanel();
+        JPanel mainPanel = new JPanel(new BorderLayout());
         mainPanel.setBackground(Color.LIGHT_GRAY);
-        mainPanel.setLayout(null);
-        mainPanel.setBounds(0, 0, MAX_WIDTH, MAX_HEIGHT);
+        mainPanel.setSize(MAX_WIDTH, MAX_HEIGHT);
+        
+        // North Pane
+        JPanel northPanel = new JPanel();
+        northPanel.setLayout(new BoxLayout(northPanel, BoxLayout.LINE_AXIS));
+        northPanel.setBackground(Color.GREEN);
+        northPanel.setPreferredSize(new Dimension(MAX_WIDTH, 50));
+        // add image for the pane 
+        //northPanel.add()
+
+        mainPanel.add(northPanel, BorderLayout.NORTH);
+        
+        // South Pane
+        JPanel southPanel = new JPanel(new FlowLayout());
+        southPanel.setBackground(Color.GREEN);
+        southPanel.setPreferredSize(new Dimension(MAX_WIDTH, 50));
+        mainPanel.add(southPanel, BorderLayout.SOUTH);
+        
+
+        
+        
         
         // add the main panel
          this.add(mainPanel);
@@ -37,7 +58,6 @@ public class ENSE471Lab2 extends javax.swing.JFrame
         this.setTitle("Flavours Of India");
 
         // Define the size of the frame
-
         this.setSize(MAX_HEIGHT, MAX_WIDTH);
         
         // open frame in the middle of the screen 
