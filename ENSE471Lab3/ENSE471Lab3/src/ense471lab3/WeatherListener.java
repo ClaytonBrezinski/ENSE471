@@ -7,6 +7,8 @@ Notes:
 
 package ense471lab3;
 
+import java.util.EventListener;
+
 /*
  *
  * @author Dolan
@@ -16,9 +18,10 @@ package ense471lab3;
 Purpose:
 Notes
 */
-public interface WeatherListener
+public interface WeatherListener extends EventListener 
 {
-
+    public void weatherChange(WeatherEvent evt);
+    public void temperatureChange(WeatherEvent evt);
 }
 /*
 Purpose:

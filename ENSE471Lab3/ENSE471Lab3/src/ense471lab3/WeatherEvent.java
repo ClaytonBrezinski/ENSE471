@@ -1,5 +1,7 @@
 
+package ense471lab3;
 import java.util.EventObject;
+
 
 /*
 Author: Clayton Brezinski
