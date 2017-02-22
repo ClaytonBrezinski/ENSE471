@@ -28,19 +28,25 @@ public class WeatherSubscriber implements WeatherListener
     @Override
     public void weatherChange(WeatherEvent event)
     {
-        System.out.println("LightWatcher-" + id
-                + ": I am notified that light is on");
+        System.out.println("WeatherSubscriber-" + id
+                + ": I am notified of a weather change");
 
         if (event.temperature != 0 || event.weatherCondition != "")
         {
-            System.out.println("LightWatcher-" + id + ": temperature: " + event.temperature + " ,weather: " + event.weatherCondition);
+            System.out.println("WeatherSubscriber-" + id + ": temperature: " + event.temperature + " ,weather: " + event.weatherCondition);
         }
     }
 
     @Override
-    public void temperatureChange(WeatherEvent evt)
+    public void temperatureChange(WeatherEvent event)
     {
+        System.out.println("WeatherSubscriber-" + id
+                + ": I am notified of a temperature change");
 
+        if (event.temperature != 0 || event.weatherCondition != "")
+        {
+            System.out.println("WeatherSubscriber-" + id + ": temperature: " + event.temperature + " ,weather: " + event.weatherCondition);
+        }
     }
 }
 /*
