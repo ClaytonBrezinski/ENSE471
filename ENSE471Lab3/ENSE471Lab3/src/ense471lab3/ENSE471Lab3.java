@@ -20,7 +20,17 @@ public class ENSE471Lab3
     
     public ENSE471Lab3()
     {
-
+        WeatherStation ws = new WeatherStation();
+        WeatherSubscriber s1 = new WeatherSubscriber(1);
+        WeatherSubscriber s2 = new WeatherSubscriber(2);
+        WeatherSubscriber s3 = new WeatherSubscriber(3);
+        
+        ws.addWeatherListener(s1);
+        ws.addWeatherListener(s2);
+        ws.addWeatherListener(s3);
+        
+        ws.changeTemperature(30);
+        ws.changeWeather("overcast");
     }
 
     /**
