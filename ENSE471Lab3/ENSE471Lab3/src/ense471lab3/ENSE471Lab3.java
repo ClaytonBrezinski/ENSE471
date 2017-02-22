@@ -13,7 +13,7 @@ import java.awt.event.*;
 
  @author Dolan
  */
-public class ENSE471Lab3
+public class ENSE471Lab3 extends javax.swing.JFrame
 {
     private int MAX_HEIGHT = 800;
     private int MAX_WIDTH = 800;
@@ -32,8 +32,8 @@ public class ENSE471Lab3
         ws.addWeatherListener(s2);
         ws.addWeatherListener(s3);
         
-        ws.changeTemperature(30);
-        ws.changeWeather("overcast");
+        //ws.changeTemperature(30);
+        //ws.changeWeather("overcast");
     }
 }
 /*
