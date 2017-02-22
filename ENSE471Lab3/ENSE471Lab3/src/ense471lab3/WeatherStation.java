@@ -20,7 +20,6 @@ import java.util.List;
  */
 public class WeatherStation
 {
-
     private String currentWeather;
     private double currentTemperature;   // in degrees C
 
@@ -43,6 +42,14 @@ public class WeatherStation
     {
         listeners.add(inListener);
         System.out.println("Added a listener");
+    }
+    public void changeWeather(String inWeather)
+    {
+        this.currentWeather = inWeather;
+    }
+    public void changeTemperature(double inTemperature)
+    {
+        this.currentTemperature = inTemperature;  
     }
 }
 /*
