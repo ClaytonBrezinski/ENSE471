@@ -17,8 +17,11 @@ public class ENSE471Lab3
 {
     private int MAX_HEIGHT = 800;
     private int MAX_WIDTH = 800;
-    
-    public ENSE471Lab3()
+
+    /**
+     @param args the command line arguments
+     */
+    public static void main(String[] args)
     {
         WeatherStation ws = new WeatherStation();
         WeatherSubscriber s1 = new WeatherSubscriber(1);
@@ -31,13 +34,6 @@ public class ENSE471Lab3
         
         ws.changeTemperature(30);
         ws.changeWeather("overcast");
-    }
-
-    /**
-     @param args the command line arguments
-     */
-    public static void main(String[] args)
-    {
     }
 }
 /*
