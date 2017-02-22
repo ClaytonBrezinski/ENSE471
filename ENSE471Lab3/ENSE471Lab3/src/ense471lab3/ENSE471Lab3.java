@@ -13,7 +13,7 @@ import java.awt.event.*;
 
  @author Dolan
  */
-public class ENSE471Lab3 extends javax.swing.JFrame
+public class ENSE471Lab3
 {
     private int MAX_HEIGHT = 800;
     private int MAX_WIDTH = 800;
@@ -28,15 +28,6 @@ public class ENSE471Lab3 extends javax.swing.JFrame
      */
     public static void main(String[] args)
     {
-
-        java.awt.EventQueue.invokeLater(new Runnable()
-        {
-            public void run()
-            {
-                new ENSE471Lab3().setVisible(true);
-            }
-        });
-
     }
 }
 /*

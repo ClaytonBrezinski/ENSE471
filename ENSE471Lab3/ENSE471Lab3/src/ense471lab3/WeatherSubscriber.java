@@ -16,7 +16,7 @@ package ense471lab3;
 Purpose:
 Notes
 */
-public interface WeatherListener
+public class WeatherSubscriber
 {
 
 }

@@ -5,8 +5,6 @@ Date:
 Notes:
 */
 
-package ense471lab3;
-
 /*
  *
  * @author Dolan
@@ -16,7 +14,7 @@ package ense471lab3;
 Purpose:
 Notes
 */
-public interface WeatherListener
+public class WeatherEvent
 {
 
 }
