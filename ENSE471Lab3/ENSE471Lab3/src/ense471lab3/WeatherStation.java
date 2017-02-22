@@ -43,18 +43,40 @@ public class WeatherStation
         listeners.add(inListener);
         System.out.println("Added a listener");
     }
+
     public void changeWeather(String inWeather)
     {
         this.currentWeather = inWeather;
+        notifyListeners(false);
     }
+
     public void changeTemperature(double inTemperature)
     {
-        this.currentTemperature = inTemperature;  
+        this.currentTemperature = inTemperature;
+        notifyListeners(true);
+    }
+
+    private void notifyListeners(boolean tempChange)
+    {
+        // this is not a very OO method of solving this problem
+        WeatherEvent event = new WeatherEvent(this, this.currentTemperature, this.currentWeather);
+        for (WeatherListener listener : listeners)
+        {
+            if (tempChange == true)
+            {
+                listener.temperatureChange(event);
+            }
+            else
+            {
+                listener.weatherChange(event);
+            }
+        }
     }
 }
+
 /*
-Purpose:
-Arguments:
-Outputs: 
-Notes:
-*/
+ Purpose:
+ Arguments:
+ Outputs:
+ Notes:
+ */
