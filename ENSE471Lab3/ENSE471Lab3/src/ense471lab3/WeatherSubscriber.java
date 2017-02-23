@@ -21,22 +21,30 @@ import java.awt.event.*;
  */
 public class WeatherSubscriber extends javax.swing.JFrame implements WeatherListener
 {
-    private int MAX_HEIGHT = 800;
-    private int MAX_WIDTH = 800;
+    private int MAX_HEIGHT = 400;
+    private int MAX_WIDTH = 400;
     
     private int id;
 
+    JPanel mainPanel;
+    JLabel label;
+    
     public WeatherSubscriber(int inID)
     {
         this.id = inID;
         System.out.println("WeatherSubscriber: " + inID + ", created");
         defaultSetupUI();
         
-        JPanel mainPanel = new JPanel(new BorderLayout());
-        mainPanel.setBackground(Color.DARK_GRAY);
-        mainPanel.setSize(MAX_WIDTH, MAX_HEIGHT);
+        this.mainPanel = new JPanel(new BorderLayout());
+        this.mainPanel.setBackground(Color.DARK_GRAY);
+        this.mainPanel.setSize(MAX_WIDTH, MAX_HEIGHT);
         
-        this.add(mainPanel);
+        label = new JLabel();
+        label.setText("Temperature: 21 C");
+        label.setPreferredSize(new Dimension(100,100));
+        
+        mainPanel.add(label, BorderLayout.CENTER);
+        this.add(this.mainPanel);
         this.setVisible(true);
     }
 
@@ -70,6 +78,26 @@ public class WeatherSubscriber extends javax.swing.JFrame implements WeatherList
         {
             System.out.println("WeatherSubscriber-" + id + ": temperature: " + event.temperature + " ,weather: " + event.weatherCondition);
         }
+        
+        if (event.weatherCondition != "")
+        {
+            if (event.weatherCondition.equalsIgnoreCase("sunny"))
+            {
+                this.mainPanel.setBackground(Color.YELLOW);
+            }
+            else if (event.weatherCondition.equalsIgnoreCase("overcast"))
+            {
+                this.mainPanel.setBackground(Color.LIGHT_GRAY);
+            }
+            else if (event.weatherCondition.equalsIgnoreCase("raining"))
+            {
+                this.mainPanel.setBackground(Color.BLUE);
+            }
+            else
+            {
+                this.mainPanel.setBackground(Color.DARK_GRAY);
+            }
+        }
     }
 
     @Override
@@ -82,6 +110,7 @@ public class WeatherSubscriber extends javax.swing.JFrame implements WeatherList
         {
             System.out.println("WeatherSubscriber-" + id + ": temperature: " + event.temperature + " ,weather: " + event.weatherCondition);
         }
+        this.label.setText("Temperature: " + Double.toString(event.temperature) + " C");
     }
 }
 /*
